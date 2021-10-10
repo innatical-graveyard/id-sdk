@@ -1,9 +1,12 @@
 import { createTRPCClient } from "@trpc/client";
 import type { App } from "../../innatical-id-backend/resources/_app";
 import jwtDecode from "jwt-decode";
+import fetch from "node-fetch";
 
 const client = createTRPCClient<App>({
   url: "https://api.id.innatical.com",
+  // @ts-ignore
+  fetch,
 });
 
 export class InnaticalID {
