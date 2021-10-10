@@ -1,0 +1,17 @@
+{
+  "name": "@innatical/innatical-id-sdk",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@trpc/client": "^9.9.1",
+    "jwt-decode": "^3.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  },
+  "files": [
+    "dist/"
+  ]
+}
