@@ -6,8 +6,8 @@
   "license": "MIT",
   "dependencies": {
     "@trpc/client": "^9.9.1",
-    "jwt-decode": "^3.1.2",
-    "node-fetch": "^3.0.0"
+    "cross-fetch": "^3.1.4",
+    "jwt-decode": "^3.1.2"
   },
   "devDependencies": {
     "typescript": "^4.4.3"
