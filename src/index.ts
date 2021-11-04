@@ -10,9 +10,11 @@ const client = createTRPCClient<App>({
 
 export class InnaticalID {
   private appID: string;
+  private token: string;
 
-  constructor(appID: string) {
+  constructor(appID: string, token: string) {
     this.appID = appID;
+    this.token = token;
   }
 
   createURL(callback: string) {
@@ -26,6 +28,12 @@ export class InnaticalID {
     return await client.query("users.me", {
       token,
     });
+  }
+
+  async searchUser(
+    query: { id: string } | { email: string } | { username: string }
+  ) {
+    return await client.query("users.get", { token: this.token, ...query });
   }
 
   validateToken(token: string) {
