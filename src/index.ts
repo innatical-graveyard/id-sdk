@@ -24,18 +24,22 @@ export class InnaticalID {
   async findUser(
     query: { id: string } | { email: string } | { username: string }
   ) {
-    return await client.post<UserResponse>("/apps/users/find", {
-      token: this.token,
-      ...query,
-    });
+    return (
+      await client.post<UserResponse>("/apps/users/find", {
+        token: this.token,
+        ...query,
+      })
+    ).data;
   }
 
   async getUserFromToken(token: string) {
-    return await client.get<UserResponse>("/apps/users/me", {
-      headers: {
-        authorization: token,
-      },
-    });
+    return (
+      await client.get<UserResponse>("/apps/users/me", {
+        headers: {
+          authorization: token,
+        },
+      })
+    ).data;
   }
 
   createURL(callback: string) {
